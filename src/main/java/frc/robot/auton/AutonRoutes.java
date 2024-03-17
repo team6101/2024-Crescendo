@@ -39,7 +39,7 @@ public class AutonRoutes {
     >(List.of(new AutonShoot(), new AutonMoveInches(-150)));
 
     public static final ArrayDeque<AutonAction> SHOOT_BACK_UP_ROTATE_FROM_AMP_SIDE_BLUE = new ArrayDeque<AutonAction>(
-        List.of(new AutonShoot(), new AutonMoveInches(-40), new AutonRotate(45), new AutonMoveInches(-65))
+        List.of(new AutonShoot(), new AutonMoveInches(-40), new AutonRotateWithPIDCommand(45), new AutonMoveInches(-65))
     );
 
     public static final ArrayDeque<AutonAction> SHOOT_AND_BACK_UP_SKETCHILY = new ArrayDeque<AutonAction>(
@@ -53,11 +53,11 @@ public class AutonRoutes {
     public static ArrayDeque<AutonAction> BACKUP_TURN_BACKUP = new ArrayDeque<>();
 
     private static final ArrayDeque<AutonAction> BLUE_BACKUP_TURN_BACKUP = new ArrayDeque<AutonAction>(
-        List.of(new AutonMoveInches(-24), new AutonRotate(-135), new AutonMoveInches(36))
+        List.of(new AutonMoveInches(-24), new AutonRotateWithPIDCommand(-135), new AutonMoveInches(36))
     );
 
     private static final ArrayDeque<AutonAction> RED_BACKUP_TURN_BACKUP = new ArrayDeque<AutonAction>(
-        List.of(new AutonMoveInches(-24), new AutonRotate(135), new AutonMoveInches(36))
+        List.of(new AutonMoveInches(-24), new AutonRotateWithPIDCommand(135), new AutonMoveInches(36))
     );
 
     public static ArrayDeque<AutonAction> MESS_UP_CENTER_RINGS_FROM_AMP_SIDE = new ArrayDeque<>();
@@ -65,11 +65,11 @@ public class AutonRoutes {
     public static ArrayDeque<AutonAction> MESS_UP_CENTER_RINGS_FROM_TERMINAL_SIDE = new ArrayDeque<>();
 
     private static final ArrayDeque<AutonAction> MESS_UP_CENTER_RINGS_TURN_LEFT = new ArrayDeque<AutonAction>(
-        List.of(new AutonMoveInches(312), new AutonRotate(-90), new AutonMoveInches(252))
+        List.of(new AutonMoveInches(312), new AutonRotateWithPIDCommand(-90), new AutonMoveInches(252))
     );
 
     private static final ArrayDeque<AutonAction> MESS_UP_CENTER_RINGS_TURN_RIGHT = new ArrayDeque<AutonAction>(
-        List.of(new AutonMoveInches(312), new AutonRotate(90), new AutonMoveInches(252))
+        List.of(new AutonMoveInches(312), new AutonRotateWithPIDCommand(90), new AutonMoveInches(252))
     );
 
     /**Paths will slightly differ based on what team we're on, so these will correct them. */

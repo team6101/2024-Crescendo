@@ -38,9 +38,6 @@ public class RotatePID extends PIDCommand {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        System.out.println(
-            "current: " + Robot.getGyroscope().getAngle() + " target:" + targetDegree + " debounce: " + doneDebounceTime
-        );
         if (Math.abs(Robot.getGyroscope().getAngle() - targetDegree) < Constants.ROTATION_DEGREE_TOLERANCE) {
             doneDebounceTime++;
         } else {
