@@ -1,6 +1,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.auton.AutonAction;
 import frc.robot.auton.AutonMoveHoodToPosition.HoodPosition;
 import frc.robot.robotcomponents.Climber;
 import frc.robot.robotcomponents.Intake;
@@ -30,13 +31,13 @@ public class InputtedCoDriverControls {
             Shooter.stopShooterMotors();
         }
 
-        if (controller.getAButtonPressed()) {
-            Intake.startSourceIntake();
-        }
-        // TODO add this: && !Shooter.isPositioningRing() when mechanics adds a breambreak sensor (never)
-        if (controller.getAButtonReleased()) {
-            Intake.stopSourceIntake();
-        }
+        // if (controller.getAButtonPressed()) {
+        //     Intake.startSourceIntake();
+        // }
+        // // TODO add this: && !Shooter.isPositioningRing() when mechanics adds a breambreak sensor (never)
+        // if (controller.getAButtonReleased()) {
+        //     Intake.stopSourceIntake();
+        // }
 
         if (controller.getBackButton()) {
             Climber.manualExtendArms();
@@ -57,16 +58,15 @@ public class InputtedCoDriverControls {
         //     // TODO add 3rd position if needed
         // }
         if (controller.getBButton()) {
-            Intake.startFloorIntake();
+            Intake.startSourceIntake();
             // TODO add this: && !Shooter.isPositioningRing() when mechanics adds a breambreak sensor (never)
         } else if (controller.getBButtonReleased()) {
-            Intake.stopFloorIntake();
+            Intake.stopSourceIntake();
         }
         if (controller.getPOV() == 0) {
             Intake.backtrack();
             Shooter.backtrack();
         } else if (controller.getPOV() == -1 && lastPOV != -1) {
-            Intake.stopFloorIntake();
             Shooter.stopShooterMotors();
         }
         lastPOV = controller.getPOV();

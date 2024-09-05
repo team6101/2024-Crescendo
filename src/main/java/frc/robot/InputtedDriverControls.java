@@ -31,9 +31,6 @@ public class InputtedDriverControls {
         if (controller.getLeftBumper()) {
             Intake.startFloorIntake();
         }
-        if (controller.getLeftBumperReleased()) {
-            Intake.stopFloorIntake();
-        }
         //This isn't probably helpful, but if the controllers somehow switch mid match, this box will turn red
         if (controller.getRightX() <= -0.99 && Math.abs(controller.getRightY()) < 0.01) {
             framesWithBadInput++;

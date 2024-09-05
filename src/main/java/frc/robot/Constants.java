@@ -67,7 +67,7 @@ public class Constants {
 
     /*INTAKE CONFIG */
     public static final double FLOOR_INTAKE_SPEED = 1.00;
-    public static final double SOURCE_INTAKE_SPEED = -0.50;
+    public static final double SOURCE_INTAKE_SPEED = -0.30;
 
     public static final int INTAKE_BEAM_BREAK_ID = 0;
 

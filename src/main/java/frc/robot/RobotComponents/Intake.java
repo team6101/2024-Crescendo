@@ -24,7 +24,6 @@ public class Intake {
         // if (!Robot.getTeleopActionRunner().containsAction(AutonFloorIntake.class)) {
         //     Robot.getTeleopActionRunner().addActionToRun(new AutonFloorIntake());
         // }
-        Robot.motors.getIntake().set(Constants.FLOOR_INTAKE_SPEED);
         Robot.motors.getFeeder().set(Constants.FLOOR_INTAKE_SPEED);
     }
 
@@ -35,9 +34,7 @@ public class Intake {
     }
 
     /* This will spin the motor backwards in an attempt to eject a stuck note*/
-    public static void backtrack() {
-        Robot.motors.getIntake().set(Constants.MOTOR_BACKTRACK_SPEED_PERCENT);
-    }
+    public static void backtrack() {}
 
     public static void stopSourceIntake() {
         // Robot.getTeleopActionRunner().removeActionsOfType(AutonSourceIntake.class);
@@ -46,7 +43,6 @@ public class Intake {
     }
 
     public static void stopFloorIntake() {
-        Robot.motors.getIntake().stopMotor();
         Robot.motors.getFeeder().stopMotor();
         // Robot.getTeleopActionRunner().removeActionsOfType(AutonFloorIntake.class);
     }

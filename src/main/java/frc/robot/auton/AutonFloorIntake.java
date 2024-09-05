@@ -24,14 +24,12 @@ public class AutonFloorIntake extends AutonAction {
 
     @Override
     public void initiate() {
-        Robot.motors.getIntake().set(Constants.FLOOR_INTAKE_SPEED);
         Robot.motors.getFeeder().set(Constants.FEEDER_MOTOR_SPEED);
         Shooter.setCurrentlyPositioningRing(false);
     }
 
     @Override
     public void shutdown() {
-        Robot.motors.getIntake().stopMotor();
         Robot.motors.getFeeder().stopMotor();
         Shooter.setCurrentlyPositioningRing(false);
     }

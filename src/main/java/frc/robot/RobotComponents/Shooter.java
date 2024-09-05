@@ -74,4 +74,9 @@ public class Shooter {
     public static void stopHoodMotors() {
         Robot.motors.getHoodAdjuster().stopMotor();
     }
+
+    public static void stopFeedMotors() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'stopFeedMotors'");
+    }
 }
