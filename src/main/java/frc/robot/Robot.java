@@ -22,6 +22,8 @@ import frc.robot.auton.ParallelActionRunner;
 import frc.robot.auton.SequentialActionRunner;
 import frc.robot.motor.MotorController;
 import frc.robot.motor.MotorControllerFactory;
+import frc.robot.pseudoCode.CodeRunner;
+import frc.robot.pseudoCode.PseudoCodeActions;
 import java.text.DecimalFormat;
 import java.util.ArrayDeque;
 
@@ -261,6 +263,7 @@ public class Robot extends TimedRobot {
         );
         autonRouteChooser.addOption("Test Manual PID movement", AutonRoutes.TEST_PID_MOVEMENT);
         autonRouteChooser.addOption("Test Manual Backward PID movement", AutonRoutes.TEST_PID_BACKWARD_MOVEMENT);
+        autonRouteChooser.addOption("Run Pseudo Code", PseudoCodeActions.pseudoCodeActionQueue);
     }
 
     /*
@@ -316,6 +319,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void autonomousInit() {
+        CodeRunner.main(new String[] { "this argument is useless" });
         AutonRoutes.setupCorrectAutonPaths();
         ArrayDeque<AutonAction> route = new ArrayDeque<>(autonRouteChooser.getSelected());
         double delayAmount = SmartDashboard.getNumber("Auton Delay (sec)", 0.0);
